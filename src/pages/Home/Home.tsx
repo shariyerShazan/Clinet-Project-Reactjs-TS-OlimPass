@@ -8,7 +8,7 @@ const Home = () => {
   const navigate = useNavigate()
 
   useEffect(()=>{
-    document.title = "Home | OLIM PASS"
+    document.title = "OLIM PASS"
   }, [])
   
   const features = [
