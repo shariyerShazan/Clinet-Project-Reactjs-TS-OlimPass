@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import RedeemSuccess from "./_components/RedeemSuccess";
@@ -6,6 +6,10 @@ import RedeemSuccess from "./_components/RedeemSuccess";
 export default function RedeemPage() {
   const [open, setOpen] = useState(false);
 
+  useEffect(()=>{
+    document.title = "Redeem | OLIM PASS"
+  }, [])
+  
   return (
     <div className=" bg-[#0B0003] text-white flex flex-col items-center p-6">
       {/* Header */}

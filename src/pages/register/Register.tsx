@@ -1,5 +1,5 @@
 import type React from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import StepOne from "./_components/StepOne"
 import StepTwo from "./_components/StepTwo"
 import PaymentProcessing from "./_payments/PaymentProcessingProps"
@@ -22,6 +22,12 @@ interface FormData {
 }
 
 const Register: React.FC = () => {
+
+    useEffect(()=>{
+      document.title = "Register | OLIM PASS"
+    }, [])
+    
+
   const [currentStep, setCurrentStep] = useState(1)
 
     const [showProcessing, setShowProcessing] = useState(false)

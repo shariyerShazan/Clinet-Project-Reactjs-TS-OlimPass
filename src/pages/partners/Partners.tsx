@@ -2,6 +2,7 @@ import type React from "react"
 import Categories from "./_components/Categories"
 import AppButton from "../Home/_components/AppButton"
 import { useNavigate } from "react-router"
+import { useEffect } from "react"
 
 export type Category = {
   name: string
@@ -11,6 +12,11 @@ export type Category = {
 
 const Partners: React.FC = () => {
 const navigate = useNavigate()
+
+  useEffect(()=>{
+    document.title = "Partners | OLIM PASS"
+  }, [])
+  
 
   const partnerCategories : Category[] = [
     {

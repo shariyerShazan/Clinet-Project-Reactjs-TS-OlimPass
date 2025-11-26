@@ -2,10 +2,15 @@
 import FeatureCard from "./_components/FeatureCard";
 import AppButton from "./_components/AppButton";
 import { useNavigate } from "react-router";
+import { useEffect } from "react";
 
 const Home = () => {
   const navigate = useNavigate()
 
+  useEffect(()=>{
+    document.title = "OLIM PASS"
+  }, [])
+  
   const features = [
     {
       color: "#000000",
