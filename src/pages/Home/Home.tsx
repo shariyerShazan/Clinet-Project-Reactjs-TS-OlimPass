@@ -25,7 +25,7 @@ const Home = () => {
     },
   ];
 
-
+// 
   return (
     <main className="pb-20 mt-14 px-4 flex flex-col justify-between min-h-[78vh] sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
       {/* Hero Section */}
@@ -38,10 +38,10 @@ const Home = () => {
   //   textShadow: "0 0 0 #FFFFFF, 3px 0 0 #FFFFFF, 0 3px 0 #FFFFFF, 3px 3px 0 #FFFFFF"
   // }} 
   className="text-5xl  md:text-6xl lg:text-7xl xl:text-8xl font-abc-heavy-3  bold-stroke-3 leading-9 md:leading-12 lg:leading-15 xl:leading-19 tracking-[-1px]  xl:tracking-[-2px] mb-0">
-    OLIM PASS
+    OLIM PASS.
   </h1>
 
-  <h2 className="text-3xl md:text-5xl lg:text-[65px] xl:text-[80px] font-abc-regular leading-9 md:leading-12 lg:leading-15 xl:leading-19 tracking-[-1px] md:tracking-[-3px]  xl:tracking-[-5px] mt-1">
+  <h2 className="text-3xl md:text-5xl lg:text-[65px] xl:text-[80px] font-abc-light leading-9 md:leading-12 lg:leading-15 xl:leading-19 tracking-[-1px] md:tracking-[-3px]  xl:tracking-[-5px] mt-1 !font-light">
     <span className="block">WELCOME TO ISRAEL,</span>
     <span className="block">NOW HERE'S A DISCOUNT.</span>
   </h2>
@@ -53,7 +53,7 @@ const Home = () => {
 
       {/* Feature Cards */}
      <div className="flex justify-center">
-       <div className="grid grid-cols-1 md:grid-cols-3 justify-center items-center text-center gap-2.5 mb-12">
+       <div className="flex flex-col max-w-5xl px-6  justify-center items-center text-center gap-1 mb-12">
         {features.map((item, index) => (
           <FeatureCard key={index} color={item.color}>
             {item.text}
