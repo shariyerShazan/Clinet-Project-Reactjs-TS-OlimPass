@@ -144,7 +144,7 @@ console.log(payload)
 
     const registrationData = await pollRegistration(registrationId);
 
-    toast.success("Registration done and payment cleared!");
+    toast.success("Membership activated and Membership ID sent to your email.");
     setMembershipId(registrationData.membershipId);
     setAvalableDate(registrationData.validFrom);
     setValidDate(registrationData.validTo);
@@ -225,7 +225,7 @@ console.log(payload)
           <StepTwo data={formData} onChange={handleStepTwoChange} onBack={handleBack} onSubmit={handleSubmit} />
         )}
          <PaymentProcessing open={showProcessing} onClose={handleSuccessClose}/>
-        <PaymentSuccess open={showSuccess} onClose={handleSuccessClose} activeStatus={activeStatus} membershipId={membershipId} avalableDate={avalableDate} validDate={validDate}/>
+        <PaymentSuccess open={showSuccess} mail={formData.email} onClose={handleSuccessClose} activeStatus={activeStatus} membershipId={membershipId} avalableDate={avalableDate} validDate={validDate}/>
       </div>
     </div>
   );

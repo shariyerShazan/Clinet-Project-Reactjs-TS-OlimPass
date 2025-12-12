@@ -86,6 +86,7 @@ const StepOne: React.FC<StepOneProps> = ({ data, onChange, onContinue }) => {
               type="number"
               placeholder="- - - - - - - -"
               value={data.teudatZehut}
+              min={8}
               onChange={(e) => handleChange("teudatZehut", e.target.value)}
               className="!bg-[#2b2b2b] border-0 focus:!ring-1 focus:!ring-[#F80B58] text-white placeholder-gray-600 text-base lg:text-lg h-12  "
             />

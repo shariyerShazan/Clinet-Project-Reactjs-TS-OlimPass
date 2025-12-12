@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { GoDownload } from "react-icons/go";
 import successPic from "@/assets/payment/dialog/success.png"
 import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
-// import { useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 
 interface PaymentSuccessProps {
@@ -13,11 +13,36 @@ interface PaymentSuccessProps {
   membershipId: string
   avalableDate: string ,
   validDate : string
-  activeStatus: boolean
+  activeStatus: boolean ,
+  mail : string}
+
+const PaymentSuccess: React.FC<PaymentSuccessProps> = ({ open, onClose, membershipId , validDate , avalableDate , activeStatus , mail}) => {
+
+
+ function maskMail(email: string): string {
+  if (!email || !email.includes("@")) return email;
+
+  const [user, domain] = email.split("@");
+
+  const maskedUser =
+    user.length <= 2
+      ? user[0] + "*"
+      : user[0] + "*".repeat(user.length - 2) + user[user.length - 1];
+
+
+  const domainParts = domain.split(".");
+  const mainDomain = domainParts[0];
+  const tld = domainParts.slice(1).join(".");
+
+  const maskedDomain =
+    mainDomain.length <= 2
+      ? mainDomain[0] + "*"
+      : mainDomain[0] + "*".repeat(mainDomain.length - 1);
+
+  return `${maskedUser}@${maskedDomain}.${tld}`;
 }
 
-const PaymentSuccess: React.FC<PaymentSuccessProps> = ({ open, onClose, membershipId , validDate , avalableDate , activeStatus}) => {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
       <DialogContent aria-describedby="dialog-description" className="border-0 bg-white rounded-2xl shadow-2xl max-w-md italic">
@@ -37,7 +62,7 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = ({ open, onClose, membersh
           <div className="space-y-2">
             <h2 className="text-2xl font-bold text-black">Congratulations!</h2>
             <p className="text-base text-gray-600">
-             You have been successfully registered in our system. We have sent a copy of your membership ID and payment details to your email ex……@.com
+             You have been successfully registered in our system. We have sent a copy of your membership ID and payment details to your email {maskMail(mail)}
             </p>
           </div>
 
@@ -81,9 +106,9 @@ const PaymentSuccess: React.FC<PaymentSuccessProps> = ({ open, onClose, membersh
             <Button className="w-full bg-[#e1e1e1] text-black hover:bg-gray-200 cursor-pointer rounded-full font-semibold">
               Download as PDF <GoDownload size={22}/>
             </Button>
-            {/* <Button onClick={()=> navigate("/redeem")} className="w-full bg-[#F80B58] text-white hover:bg-pink-500 cursor-pointer rounded-full font-semibold">
+            <Button onClick={()=> navigate("/redeem")} className="w-full bg-[#F80B58] text-white hover:bg-pink-500 cursor-pointer rounded-full font-semibold">
               Redeem First Discount
-            </Button> */}
+            </Button>
           </div>
 
         </div>

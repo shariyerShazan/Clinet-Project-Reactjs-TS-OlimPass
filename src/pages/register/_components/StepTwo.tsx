@@ -24,6 +24,9 @@ interface StepTwoProps {
 }
 
 const StepTwo: React.FC<StepTwoProps> = ({ data, onChange, onBack, onSubmit }) => {
+
+
+
   const stripe = useStripe();
   const elements = useElements();
   const isStripeReady = stripe && elements;
