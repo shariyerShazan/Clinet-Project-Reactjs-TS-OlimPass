@@ -5,9 +5,13 @@ import Contact from "../pages/contact/Contact";
 import Partners from "../pages/partners/Partners";
 import Register from "@/pages/register/Register";
 import RedeemPage from "@/pages/redeems/RedeemPage";
-
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
+import SignUp from "@/(dashboard)/auth/register/SingUp";
+import DashboradLayout from "@/layouts/DashboardLayout";
+import Login from "@/(dashboard)/auth/login/Login";
+import Dashboard from "@/(dashboard)/pages/dashboard";
+import Categories from "@/(dashboard)/components/Categories";
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY!)
 
 
@@ -38,7 +42,26 @@ export const Routes = createBrowserRouter([
             {
                 path: "redeem",
                 element: <RedeemPage />
-            }
+            },
+            
         ]
-    }
+    },
+    {
+                path: "dashboard",
+                element: <DashboradLayout /> ,
+                children: [
+                    {
+                        index: true,
+                        element: <Dashboard />
+                    },
+                    {
+                        path: "signup",
+                        element: <SignUp />
+                    },
+                    {
+                        path: "login",
+                        element: <Login />
+                    }
+                ]
+            }
 ])

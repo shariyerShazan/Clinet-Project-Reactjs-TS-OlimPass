@@ -23,7 +23,7 @@ const [redeeming, setRedeeming] = useState(false);
   const { categories, loading: categoriesLoading, error: categoriesError } = useGetCategories();
   const { category: selectedCategory, loading: categoryLoading, error: categoryError } = useSingleGetCategory(selectedCategoryId);
 
-  const [redeemedId , setRedeemedId]= useState<string | null>(null);
+  const [redeemedId , setRedeemedId]= useState<string | null>(null); 
 
   useEffect(() => {
     document.title = "Redeem | OLIM PASS";

@@ -14,7 +14,7 @@ import { BASE_URL } from "@/lib/baseUrl";
 
 
 
-interface FormData {
+export interface FormData {
   firstName: string;
   lastName: string;
   email: string;
