@@ -3,6 +3,7 @@ import { BASE_URL } from "@/lib/baseUrl"
 import axios from "axios"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router"
+import { useAuth } from "@/(dashboard)/auth/AuthContext"
 import { toast } from "react-toastify"
 
 export default function Login() {
@@ -12,6 +13,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false)
 
   const navigate = useNavigate()
+  const { login } = useAuth()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -21,16 +23,15 @@ export default function Login() {
     try {
       const res = await axios.post(`${BASE_URL}/auth/login`, { email, password } , { withCredentials: true })
       if (res.data.success) {
-        localStorage.setItem("user", JSON.stringify(res.data.user))
-        if(res.data.user.role === 'ADMIN'){
-             navigate("/dashboard")
-             toast.success(res.data.message)
-             localStorage.setItem("user" , JSON.stringify(res.data.user))
-        }else{
-            toast.error("You are not authorized to access the admin dashboard")
+        // update auth context (also writes to localStorage inside the provider)
+        login(res.data.user)
+
+        if (res.data.user.role === "ADMIN") {
+          toast.success(res.data.message)
+          navigate("/dashboard", { replace: true })
+        } else {
+          toast.error("You are not authorized to access the admin dashboard")
         }
-        
-       
       }
     } catch (err: any) {
       setError(err.response?.data?.message || "Login failed")

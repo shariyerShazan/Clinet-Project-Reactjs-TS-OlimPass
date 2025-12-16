@@ -1,4 +1,3 @@
-"use client"
 
 import { useEffect, useState } from "react"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs"
@@ -10,6 +9,7 @@ import DRedeems from "../components/Redeems"
 import axios from "axios"
 import { BASE_URL } from "@/lib/baseUrl"
 import { Link } from "react-router"
+import ResetPassword from "../components/ResetPassword"
 
 export default function Dashboard() {
   const { user } = useAuth()
@@ -64,6 +64,7 @@ const handleTabChange = (value: string) => {
               { value: "partners", label: "Partners" },
               { value: "registrations", label: "Registrations" },
               { value: "redeems", label: "Redeems" },
+              { value: "reset-password", label: "Reset Password" },
             ].map((tab) => (
               <TabsTrigger
                 key={tab.value}
@@ -92,6 +93,9 @@ const handleTabChange = (value: string) => {
             </TabsContent>
             <TabsContent value="redeems">
               <DRedeems />
+            </TabsContent>
+            <TabsContent value="reset-password">
+                <ResetPassword />
             </TabsContent>
           </div>
         </Tabs>

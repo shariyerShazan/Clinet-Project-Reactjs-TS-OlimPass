@@ -119,7 +119,7 @@ export default function DPartners() {
             onChange={(e) => setName(e.target.value)}
             placeholder="Partner name"
             required
-            className="px-3 py-2 bg-[#121212] border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#F80B58]"
+            className="px-3 py-2 bg-[#121212] border border-[#F80B58] rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#F80B58]"
           />
           <input
             type="text"
@@ -127,13 +127,13 @@ export default function DPartners() {
             onChange={(e) => setDiscount(e.target.value)}
             placeholder="Discount"
             required
-            className="px-3 py-2 bg-[#121212] border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#F80B58]"
+            className="px-3 py-2 bg-[#121212] border border-[#F80B58] rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#F80B58]"
           />
           <select
             value={selectedCategoryId}
             onChange={(e) => setSelectedCategoryId(e.target.value)}
             required
-            className="px-3 py-2 bg-[#121212] border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#F80B58]"
+            className="px-3 py-2 bg-[#121212] border border-[#F80B58] rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#F80B58]"
           >
             <option value="">Select Category</option>
             {categories.map(cat => (
@@ -148,7 +148,7 @@ export default function DPartners() {
 
       {/* Partners Table */}
       <div className="bg-[#1a1a1a] shadow-md rounded-lg overflow-hidden">
-        <div className="px-6 py-4 border-b border-gray-700">
+        <div className="px-6 py-4 border-b border-[#F80B58]">
           <h2 className="text-lg font-semibold text-white">Partners</h2>
         </div>
         {loading ? (
