@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import useGetCategories, { type Category as ApiCategory } from "@/hooks/useGetCategories";
 import { toast } from "react-toastify";
 import Loading from "@/components/common/Loading";
+import CategoriesSkeleton from "./_components/CategoriesSkeleton";
 
 interface UIPartnerCategory {
   name: string;
@@ -44,7 +45,7 @@ const Partners: React.FC = () => {
           PARTNERS
         </h1>
 
-        {loading ? <Loading /> : <Categories partnerCategories={partnerCategories} />}
+        {loading ? <CategoriesSkeleton /> : <Categories partnerCategories={partnerCategories} />}
 
         <div className="flex justify-center mt-16">
           <AppButton onClick={() => navigate("/register")} color="#F80B58">

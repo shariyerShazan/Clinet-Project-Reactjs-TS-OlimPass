@@ -16,6 +16,7 @@ export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("categories")
 
   useEffect(() => {
+    document.title = "Admin Dashboard | OLIM PASS"
     const storedTab = localStorage.getItem("dashboardActiveTab")
     if (storedTab) setActiveTab(storedTab)
   }, [])

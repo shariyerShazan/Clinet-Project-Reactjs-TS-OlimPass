@@ -49,12 +49,12 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="flex gap-3 justify-center items-center">
 
-              <button
+              {/* <button
                 onClick={() => navigate("/dashboard/login")}
                 className="px-6 py-2 border-2 text-lg cursor-pointer text-white border-white rounded-full hover:bg-white hover:text-black transition font"
               >
                 Admin Login
-              </button>
+              </button> */}
               
             {pathname !== "/" && pathname !== "/register" && (
               <button

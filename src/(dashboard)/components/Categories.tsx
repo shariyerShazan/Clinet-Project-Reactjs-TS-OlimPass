@@ -114,7 +114,7 @@ const handleDelete = async (id: string) => {
             onChange={(e) => setName(e.target.value)}
             placeholder="Category name"
             required
-            className="flex-1 px-3 py-2 bg-[#121212] border border-[#F80B58] rounded-md shadow-sm text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#F80B58]"
+            className="flex-1 px-3 py-2 bg-[#121212] border border-[#F80B58]/40 rounded-md shadow-sm text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#F80B58]"
           />
           <button
             type="submit"
@@ -128,7 +128,7 @@ const handleDelete = async (id: string) => {
 
       {/* Categories Table */}
       <div className="bg-[#1a1a1a] shadow-md rounded-lg overflow-hidden">
-        <div className="px-6 py-4 border-b border-gray-700">
+        <div className="px-6 py-4 border-b border-[#F80B58]">
           <h2 className="text-lg font-semibold text-white">Categories</h2>
         </div>
         {loading ? (

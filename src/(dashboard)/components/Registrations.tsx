@@ -56,7 +56,7 @@ export default function DRegistrations() {
 
   return (
     <div className="bg-[#1a1a1a] shadow-md rounded-lg overflow-hidden">
-      <div className="px-6 py-4 border-b border-gray-700 flex items-center justify-between">
+      <div className="px-6 py-4 border-b border-[#F80B58] flex items-center justify-between">
         <h2 className="text-lg font-semibold text-white">Registrations</h2>
         <select
           value={activeFilter}

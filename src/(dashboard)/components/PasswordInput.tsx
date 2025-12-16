@@ -26,7 +26,7 @@ export function PasswordInput({
           type={show ? "text" : "password"}
           value={value}
           onChange={onChange}
-          className="w-full  px-3 py-2 pr-10 bg-[#1a1a1a] border border-gray-700 rounded-md text-white focus:outline-none focus:ring-1 focus:ring-[#F80B58]"
+          className="w-full  px-3 py-2 pr-10 bg-[#1a1a1a] border border-[#F80B58]/40 rounded-md text-white focus:outline-none focus:ring-1 focus:ring-[#F80B58]"
         />
 
         <button
